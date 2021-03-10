@@ -1,0 +1,31 @@
+/* body{
+	background-color: #00f;
+}
+ */
+#cabeceraweb{
+	background-color: #00f;
+}
+#navegacionprincipal{
+	background-color: #F00;
+}
+#barralateral{
+	background-color: #0f0;
+	float: left;
+	height:871px;
+}
+#contenidoprincipal{
+	background-color: #606;
+	margin-left: 205px;
+	padding-left: 30px;
+	padding-top: 30px;
+	
+}
+#pieprincipal{
+	background-color: #FF0;
+	clear: both;
+	margin-top: 5px;
+}
+li{
+	background-color: #FF0;
+	display: inline;
+}
