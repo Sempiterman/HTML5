@@ -7,17 +7,37 @@
 	<style>
 		#principal{
 			width: 500px;
-			background-color:#00f;
+			/* background-color:#00f; */
 			text-align: center;
 			margin: 15px auto;
 			padding: 15px;
-			border: 3px solid #f00;
+			border: 3px solid #f00; 
 			border-radius: 55px 0px 55px 0px;
 			box-shadow: #999 15px 5px 5px;
+			/* background:-moz-linear-gradient(top, #00f, #3ff); */
+			background:-webkit-linear-gradient(top, #f00, #cf0 );
+			/* background:-webkit-radial-gradient(bottom, #0f0 50%, #3ff 50%); */
+			/* background:-o-linear-gradient(top, #00f, #3ff);
+			background:-ms-linear-gradient(top, #0f0, #3ff); */
+		 	/* outline: 1px dashed #00F;
+		 	outline-offset: 15px; */
+		 	/* -webkit-transform:scale(.5, -1); */
+		 	/* -webkit-transform:rotate(-45deg) ; */
+		 	/* -webkit-transform: skew(30deg); */
+		 	-webkit-transition: -webkit-transform 1s ease 0.5s;
+		}
+		#principal:hover{
+			-webkit-transform:rotate(-15deg) ;
+		}
+		@font-face{
+			font-family: 'mi propia fuente en raiz de servidor';
+			/* src:url('Roboto-Black.ttf'); */
 		}
 		#titulo{
-			font: bold 25px Verdana,Geneva,sans-serif;
-			text-shadow: #f00 1px 1px 1px;
+			font: bold 36px 'mi propia fuente';
+			/* font: bold 25px Verdana,Geneva,sans-serif; */
+			/* text-shadow: #f00 1px 1px 1px; */
+			color: rgba(0, 0, 0, 0.11);
 
 		}
 	</style>
