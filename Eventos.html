@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Eventos con HTML y JS</title>
+	<script>
+		function tipoflor(){
+			alert("pensamientos");
+		}
+		// function dametipodeflor(){
+		// 	var imagen=document.getElementsByTagName("img")[0];
+		// 	imagen.addEventListener("click", tipoflor,false);
+		// }
+		function manejaflor(){
+			imagen=document.getElementsByTagName("img")[0];
+
+			imagen.addEventListener("mouseover",crecer,false);
+			imagen.addEventListener("mouseout",decrecer,true);
+			imagen.addEventListener("click",tipoflor,false);
+		}
+
+		function crecer(){
+			imagen.width=225;
+			imagen=height=225;
+		}
+		function decrecer(){
+			imagen.width=200;
+			imagen=height=200;
+		}
+		window.onload=manejaflor;
+	</script>
+</head>
+<body >
+	<p><img src="img/1.jpg" ></p>
+	<!-- <p><img src="img/1.jpg" onmouseover="tipoflor()"></p> -->
+</body>
+</html>
