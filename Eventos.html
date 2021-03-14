@@ -5,34 +5,48 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Eventos con HTML y JS</title>
 	<script>
+		var imagen=new Array(3);
 		function tipoflor(){
 			alert("pensamientos");
 		}
-		// function dametipodeflor(){
-		// 	var imagen=document.getElementsByTagName("img")[0];
-		// 	imagen.addEventListener("click", tipoflor,false);
-		// }
+
 		function manejaflor(){
-			imagen=document.getElementsByTagName("img")[0];
 
-			imagen.addEventListener("mouseover",crecer,false);
-			imagen.addEventListener("mouseout",decrecer,true);
-			imagen.addEventListener("click",tipoflor,false);
+			for(var i=0; i<4;i++) {
+			imagen[i]=document.getElementsByTagName("img")[i];
+			
+			}
+
+			imagen[0].addEventListener("mouseover", function(){imagen[0].width=255;imagen[0].height=255;},false);
+			imagen[0].addEventListener("mouseout", function(){imagen[0].width=200;imagen[0].height=200;},false);
+			imagen[0].addEventListener("click",tipoflor,false);
+
+			imagen[1].addEventListener("mouseover", function(){imagen[1].width=255;imagen[1].height=255;},false);
+			imagen[1].addEventListener("mouseout", function(){imagen[1].width=200;imagen[1].height=200;},false);
+			imagen[1].addEventListener("click",tipoflor,false);
+
+			imagen[2].addEventListener("mouseover", function(){imagen[2].width=255;imagen[2].height=255;},false);
+			imagen[2].addEventListener("mouseout", function(){imagen[2].width=200;imagen[2].height=200;},false);
+			imagen[2].addEventListener("click",tipoflor,false);
+
+			imagen[3].addEventListener("mouseover", function(){imagen[3].width=255;imagen[3].height=255;},false);
+			imagen[3].addEventListener("mouseout", function(){imagen[3].width=200;imagen[3].height=200;},false);
+			imagen[3].addEventListener("click",tipoflor,false);
 		}
 
-		function crecer(){
-			imagen.width=225;
-			imagen=height=225;
-		}
-		function decrecer(){
-			imagen.width=200;
-			imagen=height=200;
-		}
-		window.onload=manejaflor;
+		// function crecer(){
+		// 	imagen.width=225;
+		// 	imagen=height=225;
+		// }
+		// function decrecer(){
+		// 	imagen.width=200;
+		// 	imagen=height=200;
+		// }
+		window.addEventListener("load",manejaflor,false);
 	</script>
 </head>
 <body >
-	<p><img src="img/1.jpg" ></p>
+	<p><img src="img/1.jpg">&nbsp;&nbsp;<img src="img/2.jpg">&nbsp;&nbsp;<img src="img/3.jpg">&nbsp;&nbsp;<img src="img/4.jpg" ></p>
 	<!-- <p><img src="img/1.jpg" onmouseover="tipoflor()"></p> -->
 </body>
 </html>
