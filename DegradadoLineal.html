@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Degradado Lineal</title>
+	<title>Degradado Lineal y radial</title>
 	<link rel="stylesheet" href="">
 	<style>
 		section{
@@ -19,7 +19,7 @@
 			var elemento=document.getElementById("lienzo");
 			lienzo=elemento.getContext("2d");
 
-			var degradado=lienzo.createLinearGradient(0,150,500,150);
+			var degradado=lienzo.createRadialGradient(200,150,50,250,150,300);
 			degradado.addColorStop(0,"red");
 			degradado.addColorStop(1,"green");
 			lienzo.fillStyle=degradado;
