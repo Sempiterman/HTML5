@@ -13,12 +13,34 @@
 			var clave=document.getElementById("clave").value;
 			var valor=document.getElementById("valor").value;
 			sessionStorage.setItem(clave,valor);
+			// sessionStorage[clave]=valor;
 			leer_mostrar(clave);
+
+			document.getElementById("clave").value="";
+			document.getElementById("valor").value="";
 		}
 		function leer_mostrar(clave){
 			var zonadatos=document.getElementById("zonadatos");
-			var elvalor=sessionStorage.getItem(clave);
-			zonadatos.innerHTML="<div>Clave: "+ clave+"<br>"+"Valor: "+elvalor+"</div>";
+			zonadatos.innerHTML='<div><button onclick="eliminartodo()">Eliminar todo</button></div>';
+			// var elvalor=sessionStorage.getItem(clave);
+			for (var i=0; i<sessionStorage.length; i++) {
+				var clave=sessionStorage.key(i);
+				var elvalor=sessionStorage.getItem(clave);
+				zonadatos.innerHTML +='<div><b>NoItem - '+i+'</b> Clave: '+clave+' -||- '+'Valor: '+elvalor+'<br><button onclick="eliminarItem(\''+clave+'\')">Eliminar</button></div>';	
+			}
+			
+		}
+		function eliminartodo(){
+			if(confirm("Estas seguro de eliminar todo?")){
+				sessionStorage.clear();
+				leer_mostrar();
+			}
+		}
+		function eliminarItem(clave){
+			if(confirm("Estas segurp de eliminar este item?")){
+				sessionStorage.removeItem(clave);
+				leer_mostrar();
+			}
 		}
 
 		window.addEventListener("load",comenzar,false);
