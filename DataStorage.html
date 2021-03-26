@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Data Storage</title>
+	<script>
+		function comenzar(){
+			var boton=document.getElementById("grabar");
+			boton.addEventListener("click",itemNuevo,false);
+		}
+		function itemNuevo(){
+			var clave=document.getElementById("clave").value;
+			var valor=document.getElementById("valor").value;
+			sessionStorage.setItem(clave,valor);
+			leer_mostrar(clave);
+		}
+		function leer_mostrar(clave){
+			var zonadatos=document.getElementById("zonadatos");
+			var elvalor=sessionStorage.getItem(clave);
+			zonadatos.innerHTML="<div>Clave: "+ clave+"<br>"+"Valor: "+elvalor+"</div>";
+		}
+
+		window.addEventListener("load",comenzar,false);
+	</script>
+	<style>
+		#contenedor{
+			width: 50%;
+			margin: auto;
+			padding-top: 50px;
+		}
+		#zonaformulario{
+			float: left;
+			padding: 20px;
+			border: 1px solid #039;
+			margin-left: 150px;
+		}
+		#zonadatos{
+			float: right;
+			width: 300px;
+			margin-left: 20px;
+			padding: 20px;
+			border: 1px solid #f00;
+		}
+		#clave,#valor{
+			width: 180px;
+		}
+		#zonadatos div{
+			padding: 15px;
+			border-bottom: 3px solid #00f;
+		}
+	</style>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div id="contenedor">
+		<section id="zonaformulario">
+			<form name="miformulario">
+				<p>Clave:<br><input type="text" id="clave"></p>
+				<p>Valor:<br> <textarea id="valor"></textarea></p>
+				<p><input type="button" id="grabar" value="Grabar"></p>
+			</form>
+		</section>
+		<section id="zonadatos">
+			A la espera de datos
+		</section>
+	</div>
+</body>
+</html>
