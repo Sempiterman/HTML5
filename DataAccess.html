@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Accediendo a archivos en local</title>
+	<style>
+		#contenedor{
+			width: 1200px;
+			position: relative;
+			margin: auto;
+		}
+		#zonaformulario{
+			float: left;
+			padding: 30px;
+			border: 2px solid #039;
+		}
+		#zonadatos{
+			float: left;
+			width: 500px;
+			margin-left: 20px;
+			padding: 20px;
+			border: 2px solid #f00;
+		}
+		.directorio{
+			color: #0000ff;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	</style>
+	<script>
+		function comenzar(){
+			zonadatos=document.getElementById("zonadatos");
+			var archivos=document.getElementById("archivos");
+			archivos.addEventListener("change", procesar,false)
+		}
+		function procesar(e){
+			var archivos=e.target.files;
+			var mi_archivo=archivos[0];
+			var lector=new FileReader();
+			lector.readAsText(mi_archivo, "iso-8859-1");
+			lector.addEventListener("load",mostrar_en_web,false);
+		}
+		function mostrar_en_web(e){
+			var resultado=e.target.result;
+			zonadatos.innerHTML=resultado;
+		}
+		window.addEventListener("load",comenzar,false);
+	</script>
+</head>
+<body>
+	<div id="contenedor">
+		<section id="zonaformulario">
+			<form id="formulario">
+				<p>Archivos:<br><input type="file" name="archivos" id="archivos"></p>
+			</form>
+		</section>
+	</div>
+	<section id="zonadatos">
+		No hay informacion
+	</section>
+</body>
+</html>
